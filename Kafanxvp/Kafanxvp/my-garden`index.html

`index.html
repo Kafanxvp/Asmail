@@ -1,1 +1,1602 @@
-Kafanxvp/my-garden`index.html
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Magical Flower Garden 🌙✨</title>
+
+<style>
+
+/* =====================================================
+   RESET
+===================================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  background: #02030d;
+  font-family: Arial, sans-serif;
+}
+
+
+/* =====================================================
+   SCENE
+===================================================== */
+
+.scene {
+  position: relative;
+
+  width: 100vw;
+  height: 100vh;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      to bottom,
+      #02030d 0%,
+      #050a1d 28%,
+      #0b1730 55%,
+      #14283a 72%,
+      #17351f 100%
+    );
+}
+
+
+/* =====================================================
+   STARS
+===================================================== */
+
+.stars {
+  position: absolute;
+
+  inset: 0;
+
+  opacity: 0;
+
+  animation:
+    starsContainer 2s 0.3s forwards;
+}
+
+.star {
+  position: absolute;
+
+  width: 3px;
+  height: 3px;
+
+  border-radius: 50%;
+
+  background: #fff;
+
+  box-shadow:
+    0 0 5px #fff,
+    0 0 12px #fff2a8;
+
+  opacity: 0;
+
+  animation:
+    starAppear 1.2s forwards,
+    twinkle 3s 5s ease-in-out infinite;
+}
+
+
+/* مواقع النجوم */
+
+.star:nth-child(1) {
+  left: 4%;
+  top: 12%;
+  animation-delay: .5s;
+}
+
+.star:nth-child(2) {
+  left: 10%;
+  top: 27%;
+  animation-delay: .8s;
+}
+
+.star:nth-child(3) {
+  left: 17%;
+  top: 8%;
+  animation-delay: 1s;
+}
+
+.star:nth-child(4) {
+  left: 24%;
+  top: 19%;
+  animation-delay: 1.2s;
+}
+
+.star:nth-child(5) {
+  left: 31%;
+  top: 6%;
+  animation-delay: 1.4s;
+}
+
+.star:nth-child(6) {
+  left: 37%;
+  top: 28%;
+  animation-delay: 1.6s;
+}
+
+.star:nth-child(7) {
+  left: 43%;
+  top: 11%;
+  animation-delay: 1.8s;
+}
+
+.star:nth-child(8) {
+  left: 49%;
+  top: 22%;
+  animation-delay: 2s;
+}
+
+.star:nth-child(9) {
+  left: 56%;
+  top: 7%;
+  animation-delay: 2.2s;
+}
+
+.star:nth-child(10) {
+  left: 63%;
+  top: 17%;
+  animation-delay: 2.4s;
+}
+
+.star:nth-child(11) {
+  left: 70%;
+  top: 9%;
+  animation-delay: 2.6s;
+}
+
+.star:nth-child(12) {
+  left: 77%;
+  top: 25%;
+  animation-delay: 2.8s;
+}
+
+.star:nth-child(13) {
+  left: 84%;
+  top: 7%;
+  animation-delay: 3s;
+}
+
+.star:nth-child(14) {
+  left: 91%;
+  top: 18%;
+  animation-delay: 3.2s;
+}
+
+.star:nth-child(15) {
+  left: 96%;
+  top: 6%;
+  animation-delay: 3.4s;
+}
+
+.star:nth-child(16) {
+  left: 8%;
+  top: 40%;
+  animation-delay: 3.6s;
+}
+
+.star:nth-child(17) {
+  left: 27%;
+  top: 35%;
+  animation-delay: 3.8s;
+}
+
+.star:nth-child(18) {
+  left: 46%;
+  top: 37%;
+  animation-delay: 4s;
+}
+
+.star:nth-child(19) {
+  left: 66%;
+  top: 34%;
+  animation-delay: 4.2s;
+}
+
+.star:nth-child(20) {
+  left: 89%;
+  top: 39%;
+  animation-delay: 4.4s;
+}
+
+.star.big {
+  width: 5px;
+  height: 5px;
+
+  box-shadow:
+    0 0 8px #fff,
+    0 0 18px #ffe78c;
+}
+
+
+/* =====================================================
+   MOON
+===================================================== */
+
+.moon {
+  position: absolute;
+
+  top: 7%;
+  right: 9%;
+
+  width: 18vmin;
+  height: 18vmin;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle at 35% 30%,
+      #fffde7 0%,
+      #fff2b0 42%,
+      #ffd86b 72%,
+      #f4b648 100%
+    );
+
+  box-shadow:
+    0 0 2vmin #fff5bb,
+    0 0 5vmin #ffe692,
+    0 0 12vmin rgba(255,210,100,.65);
+
+  opacity: 0;
+
+  transform:
+    scale(.2)
+    translateY(10vmin);
+
+  animation:
+    moonRise 3s 4s cubic-bezier(.2,.8,.2,1) forwards;
+}
+
+
+/* حفر القمر */
+
+.crater {
+  position: absolute;
+
+  border-radius: 50%;
+
+  background: rgba(190,150,70,.16);
+}
+
+.crater:nth-child(1) {
+  width: 22%;
+  height: 22%;
+  left: 20%;
+  top: 25%;
+}
+
+.crater:nth-child(2) {
+  width: 14%;
+  height: 14%;
+  left: 55%;
+  top: 18%;
+}
+
+.crater:nth-child(3) {
+  width: 18%;
+  height: 18%;
+  left: 60%;
+  top: 55%;
+}
+
+.crater:nth-child(4) {
+  width: 10%;
+  height: 10%;
+  left: 30%;
+  top: 65%;
+}
+
+
+/* =====================================================
+   CLOUDS
+===================================================== */
+
+.clouds {
+  position: absolute;
+
+  left: -10%;
+  top: 34%;
+
+  width: 120%;
+  height: 20%;
+
+  opacity: 0;
+
+  animation:
+    cloudsAppear 3s 5.5s forwards;
+}
+
+.cloud {
+  position: absolute;
+
+  width: 27vmin;
+  height: 7vmin;
+
+  border-radius: 50%;
+
+  background:
+    rgba(95,105,145,.22);
+
+  filter: blur(8px);
+}
+
+.cloud:nth-child(1) {
+  left: 3%;
+  top: 20%;
+}
+
+.cloud:nth-child(2) {
+  left: 38%;
+  top: 2%;
+}
+
+.cloud:nth-child(3) {
+  right: 2%;
+  top: 28%;
+}
+
+
+/* =====================================================
+   DISTANT HILLS
+===================================================== */
+
+.hills {
+  position: absolute;
+
+  bottom: 20%;
+  left: 0;
+
+  width: 100%;
+  height: 25%;
+
+  opacity: 0;
+
+  background:
+    radial-gradient(
+      ellipse at 15% 100%,
+      #07150d 0%,
+      #07150d 43%,
+      transparent 44%
+    ),
+    radial-gradient(
+      ellipse at 50% 100%,
+      #08170e 0%,
+      #08170e 49%,
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse at 88% 100%,
+      #06130c 0%,
+      #06130c 45%,
+      transparent 46%
+    );
+
+  animation:
+    hillsAppear 2s 6.3s forwards;
+}
+
+
+/* =====================================================
+   GREEN GROUND
+===================================================== */
+
+.ground {
+  position: absolute;
+
+  bottom: 0;
+  left: 0;
+
+  width: 100%;
+  height: 30%;
+
+  border-radius:
+    50% 50% 0 0 /
+    12% 12% 0 0;
+
+  background:
+    radial-gradient(
+      ellipse at 50% 0%,
+      #6ca94d 0%,
+      #438139 30%,
+      #275c2e 60%,
+      #0b2817 100%
+    );
+
+  transform: translateY(100%);
+
+  animation:
+    groundRise 3s 6.7s cubic-bezier(.2,.8,.2,1) forwards;
+}
+
+
+/* =====================================================
+   GRASS
+===================================================== */
+
+.grass {
+  position: absolute;
+
+  bottom: 22%;
+
+  width: 100%;
+  height: 13%;
+
+  opacity: 0;
+
+  background:
+    repeating-linear-gradient(
+      75deg,
+      transparent 0 10px,
+      rgba(105,180,70,.7) 11px 14px,
+      transparent 15px 28px
+    );
+
+  animation:
+    grassAppear 2s 8.8s forwards;
+}
+
+
+/* =====================================================
+   FLOWERS
+===================================================== */
+
+.flower {
+  position: absolute;
+
+  bottom: 20%;
+
+  width: 18vmin;
+  height: 45vmin;
+
+  transform-origin: bottom center;
+
+  transform:
+    scale(var(--size))
+    scaleY(0);
+
+  animation:
+    grow 3s var(--delay)
+    cubic-bezier(.2,.8,.2,1)
+    forwards,
+
+    sway 4s
+    calc(var(--delay) + 5s)
+    ease-in-out
+    infinite;
+}
+
+
+/* أماكن وأحجام الزهور */
+
+.f1 {
+  left: 0%;
+  --size: .60;
+  --delay: 8.8s;
+}
+
+.f2 {
+  left: 7%;
+  --size: .42;
+  --delay: 9.8s;
+}
+
+.f3 {
+  left: 15%;
+  --size: .78;
+  --delay: 10.5s;
+}
+
+.f4 {
+  left: 25%;
+  --size: .50;
+  --delay: 11.2s;
+}
+
+.f5 {
+  left: 34%;
+  --size: .72;
+  --delay: 9.5s;
+}
+
+.f6 {
+  left: 44%;
+  --size: 1.05;
+  --delay: 10.8s;
+}
+
+.f7 {
+  left: 55%;
+  --size: .52;
+  --delay: 11.8s;
+}
+
+.f8 {
+  left: 63%;
+  --size: .82;
+  --delay: 10.2s;
+}
+
+.f9 {
+  left: 73%;
+  --size: .48;
+  --delay: 12.2s;
+}
+
+.f10 {
+  left: 80%;
+  --size: .74;
+  --delay: 11s;
+}
+
+.f11 {
+  left: 89%;
+  --size: .43;
+  --delay: 12.8s;
+}
+
+.f12 {
+  left: 94%;
+  --size: .62;
+  --delay: 11.7s;
+}
+
+
+/* =====================================================
+   STEM
+===================================================== */
+
+.stem {
+  position: absolute;
+
+  left: 50%;
+  bottom: 0;
+
+  width: 1.2vmin;
+  height: 31vmin;
+
+  transform: translateX(-50%);
+
+  border-radius: 100%;
+
+  background:
+    linear-gradient(
+      to right,
+      #123819,
+      #69ad4d,
+      #17451f
+    );
+
+  box-shadow:
+    0 0 1vmin rgba(100,255,100,.35);
+}
+
+
+/* =====================================================
+   LEAVES
+===================================================== */
+
+.leaf {
+  position: absolute;
+
+  width: 9vmin;
+  height: 4.5vmin;
+
+  background:
+    linear-gradient(
+      135deg,
+      #79c454,
+      #215c2b
+    );
+
+  border-radius:
+    100% 0 100% 0;
+
+  box-shadow:
+    0 0 1vmin rgba(100,220,80,.4);
+
+  transform: scale(0);
+}
+
+.leaf.left {
+  left: 45%;
+  bottom: 11vmin;
+
+  transform-origin: right center;
+
+  animation:
+    leafOpen 1s
+    calc(var(--delay) + 3.2s)
+    forwards;
+}
+
+.leaf.right {
+  left: 52%;
+  bottom: 18vmin;
+
+  transform-origin: left center;
+
+  animation:
+    leafOpenRight 1s
+    calc(var(--delay) + 3.5s)
+    forwards;
+}
+
+
+/* =====================================================
+   FLOWER HEAD
+===================================================== */
+
+.head {
+  position: absolute;
+
+  left: 50%;
+  bottom: 26vmin;
+
+  width: 19vmin;
+  height: 19vmin;
+
+  transform:
+    translateX(-50%)
+    scale(0);
+
+  filter:
+    drop-shadow(0 0 1vmin #ffd95a)
+    drop-shadow(0 0 4vmin rgba(255,190,50,.8));
+
+  animation:
+    bloom 2s
+    calc(var(--delay) + 4s)
+    cubic-bezier(.2,1.5,.4,1)
+    forwards;
+}
+
+
+/* =====================================================
+   PETALS
+===================================================== */
+
+.petal {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  width: 7vmin;
+  height: 12vmin;
+
+  transform-origin: 50% 100%;
+
+  border-radius:
+    50% 50% 45% 45% /
+    65% 65% 35% 35%;
+
+  background:
+    radial-gradient(
+      ellipse at 50% 85%,
+      #fffbd0 0%,
+      #ffe36b 35%,
+      #ffad3b 70%,
+      #ff7130 100%
+    );
+
+  box-shadow:
+    0 0 1vmin #ffe994,
+    0 0 3vmin rgba(255,190,60,.8);
+}
+
+
+/* دوران البتلات */
+
+.petal:nth-child(1) {
+  transform:
+    translate(-50%,-100%)
+    rotate(0deg);
+}
+
+.petal:nth-child(2) {
+  transform:
+    translate(-50%,-100%)
+    rotate(45deg);
+}
+
+.petal:nth-child(3) {
+  transform:
+    translate(-50%,-100%)
+    rotate(90deg);
+}
+
+.petal:nth-child(4) {
+  transform:
+    translate(-50%,-100%)
+    rotate(135deg);
+}
+
+.petal:nth-child(5) {
+  transform:
+    translate(-50%,-100%)
+    rotate(180deg);
+}
+
+.petal:nth-child(6) {
+  transform:
+    translate(-50%,-100%)
+    rotate(225deg);
+}
+
+.petal:nth-child(7) {
+  transform:
+    translate(-50%,-100%)
+    rotate(270deg);
+}
+
+.petal:nth-child(8) {
+  transform:
+    translate(-50%,-100%)
+    rotate(315deg);
+}
+
+
+/* =====================================================
+   FLOWER CENTER
+===================================================== */
+
+.center {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  width: 6vmin;
+  height: 6vmin;
+
+  transform:
+    translate(-50%,-50%);
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      #fff 0%,
+      #fff09a 35%,
+      #ffb62f 75%
+    );
+
+  box-shadow:
+    0 0 1vmin white,
+    0 0 4vmin #ffd84d,
+    0 0 8vmin #ff9f25;
+
+  animation:
+    centerGlow 2s
+    calc(var(--delay) + 6s)
+    ease-in-out
+    infinite alternate;
+}
+
+
+/* =====================================================
+   FIREFLIES
+===================================================== */
+
+.fireflies {
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+}
+
+.firefly {
+  position: absolute;
+
+  width: .8vmin;
+  height: .8vmin;
+
+  border-radius: 50%;
+
+  background: #fff6a8;
+
+  box-shadow:
+    0 0 1vmin white,
+    0 0 2.5vmin #ffd84d;
+
+  opacity: 0;
+
+  animation:
+    fly 5s
+    ease-in-out
+    infinite;
+}
+
+
+/* أماكن اليراعات */
+
+.firefly:nth-child(1) {
+  left: 8%;
+  bottom: 27%;
+  animation-delay: 15s;
+}
+
+.firefly:nth-child(2) {
+  left: 18%;
+  bottom: 42%;
+  animation-delay: 16s;
+}
+
+.firefly:nth-child(3) {
+  left: 29%;
+  bottom: 30%;
+  animation-delay: 16.5s;
+}
+
+.firefly:nth-child(4) {
+  left: 40%;
+  bottom: 48%;
+  animation-delay: 17s;
+}
+
+.firefly:nth-child(5) {
+  left: 52%;
+  bottom: 34%;
+  animation-delay: 17.5s;
+}
+
+.firefly:nth-child(6) {
+  left: 63%;
+  bottom: 46%;
+  animation-delay: 18s;
+}
+
+.firefly:nth-child(7) {
+  left: 74%;
+  bottom: 29%;
+  animation-delay: 18.5s;
+}
+
+.firefly:nth-child(8) {
+  left: 85%;
+  bottom: 43%;
+  animation-delay: 19s;
+}
+
+.firefly:nth-child(9) {
+  left: 94%;
+  bottom: 30%;
+  animation-delay: 19.5s;
+}
+
+.firefly:nth-child(10) {
+  left: 47%;
+  bottom: 65%;
+  animation-delay: 20s;
+}
+
+
+/* =====================================================
+   ANIMATIONS
+===================================================== */
+
+@keyframes starsContainer {
+
+  to {
+    opacity: 1;
+  }
+
+}
+
+
+@keyframes starAppear {
+
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+}
+
+
+@keyframes twinkle {
+
+  0%,
+  100% {
+    opacity: .45;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.8);
+  }
+
+}
+
+
+@keyframes moonRise {
+
+  0% {
+    opacity: 0;
+    transform:
+      scale(.2)
+      translateY(10vmin);
+  }
+
+  100% {
+    opacity: 1;
+    transform:
+      scale(1)
+      translateY(0);
+  }
+
+}
+
+
+@keyframes cloudsAppear {
+
+  to {
+    opacity: 1;
+  }
+
+}
+
+
+@keyframes hillsAppear {
+
+  to {
+    opacity: 1;
+  }
+
+}
+
+
+@keyframes groundRise {
+
+  to {
+    transform: translateY(0);
+  }
+
+}
+
+
+@keyframes grassAppear {
+
+  to {
+    opacity: 1;
+  }
+
+}
+
+
+/* نمو الزهرة */
+
+@keyframes grow {
+
+  0% {
+    transform:
+      scale(var(--size))
+      scaleY(0);
+  }
+
+  70% {
+    transform:
+      scale(var(--size))
+      scaleY(1.08);
+  }
+
+  100% {
+    transform:
+      scale(var(--size))
+      scaleY(1);
+  }
+
+}
+
+
+/* الأوراق */
+
+@keyframes leafOpen {
+
+  0% {
+    transform:
+      rotate(-35deg)
+      scale(0);
+  }
+
+  100% {
+    transform:
+      rotate(-25deg)
+      scale(1);
+  }
+
+}
+
+
+@keyframes leafOpenRight {
+
+  0% {
+    transform:
+      rotate(35deg)
+      scale(0);
+  }
+
+  100% {
+    transform:
+      rotate(25deg)
+      scale(1);
+  }
+
+}
+
+
+/* فتح الزهرة */
+
+@keyframes bloom {
+
+  0% {
+    transform:
+      translateX(-50%)
+      scale(0)
+      rotate(-30deg);
+  }
+
+  60% {
+    transform:
+      translateX(-50%)
+      scale(1.18)
+      rotate(10deg);
+  }
+
+  100% {
+    transform:
+      translateX(-50%)
+      scale(1)
+      rotate(0deg);
+  }
+
+}
+
+
+/* حركة بسيطة */
+
+@keyframes sway {
+
+  0%,
+  100% {
+    margin-left: 0;
+  }
+
+  50% {
+    margin-left: 1vmin;
+  }
+
+}
+
+
+/* إضاءة قلب الزهرة */
+
+@keyframes centerGlow {
+
+  0% {
+    filter: brightness(1);
+    transform:
+      translate(-50%,-50%)
+      scale(1);
+  }
+
+  100% {
+    filter: brightness(1.5);
+    transform:
+      translate(-50%,-50%)
+      scale(1.2);
+  }
+
+}
+
+
+/* اليراعات */
+
+@keyframes fly {
+
+  0% {
+    opacity: 0;
+
+    transform:
+      translate(0, 3vmin)
+      scale(.3);
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 1;
+
+    transform:
+      translate(4vmin, -8vmin)
+      scale(1);
+  }
+
+  80% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+
+    transform:
+      translate(-3vmin, -17vmin)
+      scale(.4);
+  }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+<div class="scene">
+
+
+  <!-- =================================================
+       STARS
+  ================================================== -->
+
+  <div class="stars">
+
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star big"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+
+    <div class="star big"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star big"></div>
+
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star big"></div>
+    <div class="star"></div>
+
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star big"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+
+  </div>
+
+
+  <!-- =================================================
+       MOON
+  ================================================== -->
+
+  <div class="moon">
+
+    <div class="crater"></div>
+    <div class="crater"></div>
+    <div class="crater"></div>
+    <div class="crater"></div>
+
+  </div>
+
+
+  <!-- =================================================
+       CLOUDS
+  ================================================== -->
+
+  <div class="clouds">
+
+    <div class="cloud"></div>
+    <div class="cloud"></div>
+    <div class="cloud"></div>
+
+  </div>
+
+
+  <!-- =================================================
+       HILLS
+  ================================================== -->
+
+  <div class="hills"></div>
+
+
+  <!-- =================================================
+       GREEN GROUND
+  ================================================== -->
+
+  <div class="ground"></div>
+
+  <div class="grass"></div>
+
+
+  <!-- =================================================
+       FLOWER 1
+  ================================================== -->
+
+  <div class="flower f1">
+
+    <div class="stem"></div>
+
+    <div class="leaf left"></div>
+    <div class="leaf right"></div>
+
+    <div class="head">
+
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="petal"></div>
+
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="petal"></div>
+
+      <div class="center"></div>
+
+    </div>
+
+  </div>
+
+
+  <!-- FLOWER 2 -->
+
+  <div class="flower f2">
+
+    <div class="stem"></div>
+
+    <div class="leaf left"></div>
+    <div class="leaf right"></div>
+
+    <div class="head">
+
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="petal"></div>
+
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="petal"></div>
+
+      <div class="center"></div>
+
+    </div>
+
+  </div>
+
+
+  <!-- FLOWER 3 -->
+
+  <div class="flower f3">
+
+    <div class="stem"></div>
+
+    <div class="leaf left"></div>
+    <div class="leaf right"></div>
+
+    <div class="head">
+
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="petal"></div>
+
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="petal"></div>
+
+      <div class="center"></div>
+
+    </div>
+
+  </div>
+
+
+  <!-- FLOWER 4 -->
+
+  <div class="flower f4">
+
+    <div class="stem"></div>
+
+    <div class="leaf left"></div>
+    <div class="leaf right"></div>
+
+    <div class="head">
+
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="petal"></div>
+
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="petal"></div>
+
+      <div class="center"></div>
+
+    </div>
+
+  </div>
+
+
+  <!-- FLOWER 5 -->
+
+  <div class="flower f5">
+
+    <div class="stem"></div>
+
+    <div class="leaf left"></div>
+    <div class="leaf right"></div>
+
+    <div class="head">
+
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="petal"></div>
+
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="petal"></div>
+
+      <div class="center"></div>
+
+    </div>
+
+  </div>
+
+
+  <!-- FLOWER 6 -->
+
+  <div class="flower f6">
+
+    <div class="stem"></div>
+
+    <div class="leaf left"></div>
+    <div class="leaf right"></div>
+
+    <div class="head">
+
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="petal"></div>
+
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="petal"></div>
+
+      <div class="center"></div>
+
+    </div>
+
+  </div>
+
+
+  <!-- FLOWER 7 -->
+
+  <div class="flower f7">
+
+    <div class="stem"></div>
+
+    <div class="leaf left"></div>
+    <div class="leaf right"></div>
+
+    <div class="head">
+
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="petal"></div>
+
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="petal"></div>
+
+      <div class="center"></div>
+
+    </div>
+
+  </div>
+
+
+  <!-- FLOWER 8 -->
+
+  <div class="flower f8">
+
+    <div class="stem"></div>
+
+    <div class="leaf left"></div>
+    <div class="leaf right"></div>
+
+    <div class="head">
+
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="petal"></div>
+
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="petal"></div>
+
+      <div class="center"></div>
+
+    </div>
+
+  </div>
+
+
+  <!-- FLOWER 9 -->
+
+  <div class="flower f9">
+
+    <div class="stem"></div>
+
+    <div class="leaf left"></div>
+    <div class="leaf right"></div>
+
+    <div class="head">
+
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="petal"></div>
+
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="petal"></div>
+
+      <div class="center"></div>
+
+    </div>
+
+  </div>
+
+
+  <!-- FLOWER 10 -->
+
+  <div class="flower f10">
+
+    <div class="stem"></div>
+
+    <div class="leaf left"></div>
+    <div class="leaf right"></div>
+
+    <div class="head">
+
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="petal"></div>
+
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="petal"></div>
+
+      <div class="center"></div>
+
+    </div>
+
+  </div>
+
+
+  <!-- FLOWER 11 -->
+
+  <div class="flower f11">
+
+    <div class="stem"></div>
+
+    <div class="leaf left"></div>
+    <div class="leaf right"></div>
+
+    <div class="head">
+
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="petal"></div>
+
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="petal"></div>
+
+      <div class="center"></div>
+
+    </div>
+
+  </div>
+
+
+  <!-- FLOWER 12 -->
+
+  <div class="flower f12">
+
+    <div class="stem"></div>
+
+    <div class="leaf left"></div>
+    <div class="leaf right"></div>
+
+    <div class="head">
+
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="petal"></div>
+
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="petal"></div>
+
+      <div class="center"></div>
+
+    </div>
+
+  </div>
+
+
+  <!-- =================================================
+       FIREFLIES
+  ================================================== -->
+
+  <div class="fireflies">
+
+    <div class="firefly"></div>
+    <div class="firefly"></div>
+    <div class="firefly"></div>
+    <div class="firefly"></div>
+    <div class="firefly"></div>
+
+    <div class="firefly"></div>
+    <div class="firefly"></div>
+    <div class="firefly"></div>
+    <div class="firefly"></div>
+    <div class="firefly"></div>
+
+  </div>
+
+
+</div>
+
+</body>
+</html>
